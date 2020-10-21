@@ -5,6 +5,7 @@ class ListItem extends Component {
     super(props);
     this.deleteItem = this.deleteItem.bind(this);
   }
+  //test
   render(){
     return (
       <div onClick={this.deleteItem}>{this.props.content}</div>
