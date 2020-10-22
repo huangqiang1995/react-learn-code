@@ -5,14 +5,15 @@ class ListItem extends Component {
     super(props);
     this.deleteItem = this.deleteItem.bind(this);
   }
-  //test
   render(){
+    const {content} =  this.props;
     return (
-      <div onClick={this.deleteItem}>{this.props.content}</div>
+      <div onClick={this.deleteItem}>{content}</div>
     )
   }
   deleteItem(){
-    this.props.deleteItem(this.props.index);
+    const {deleteItem,index} = this.props;
+    deleteItem(index);
   }
 }
 
