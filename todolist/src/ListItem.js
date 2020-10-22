@@ -8,7 +8,10 @@ class ListItem extends Component {
   render(){
     const {content} =  this.props;
     return (
-      <div onClick={this.deleteItem}>{content}</div>
+      <li>
+        <span>{content}</span>
+        <button onClick={this.deleteItem}>删除</button>
+      </li>
     )
   }
   deleteItem(){
