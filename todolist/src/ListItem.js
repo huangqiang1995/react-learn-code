@@ -1,5 +1,5 @@
 import React , {Component} from 'react';
-
+import PropTypes from 'prop-types';
 class ListItem extends Component {
   constructor(props){
     super(props);
@@ -15,6 +15,16 @@ class ListItem extends Component {
     const {deleteItem,index} = this.props;
     deleteItem(index);
   }
+}
+
+ListItem.propTypes = {
+  content : PropTypes.string,
+  index : PropTypes.number,
+  deleteItem : PropTypes.func
+}
+
+ListItem.defaultProps = {
+  content:'default'
 }
 
 export default ListItem;
