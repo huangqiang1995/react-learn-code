@@ -12,9 +12,15 @@ class TodoList extends Component {
     this.handlerClickBtn = this.handlerClickBtn.bind(this);
     this.handlerDeleteItem = this.handlerDeleteItem.bind(this);
   }
-
-  componentWillMount(){
-    console.log('componentWillMount');
+  /**
+   * 此生命周期钩子 react v16.9 已重命名并且不建议继续使用
+   * componentWillMount --> UNSAFE_componentWillMount
+   * componentWillReceiveProps --> UNSAFE_componentWillReceiveProps
+   * componentWillUpdate --> UnSAFE_componentWillUpdate
+   * 对于unsafe方法通常有更好的解决方法
+   */
+  UNSAFE_componentWillMount(){
+    console.log('UNSAFE_componentWillMount');
   }
 
   componentDidMount(){
