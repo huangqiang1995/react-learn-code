@@ -18,6 +18,7 @@ class TodoList extends Component {
           <input
            value={this.state.inputValue}
            onChange={this.handlerInputChange}
+           ref={(input)=>{this.input = input}}
            />
           <button onClick={this.handlerClickBtn}>提交</button>
           <ul>
@@ -32,13 +33,13 @@ class TodoList extends Component {
   getListItem(){
     return this.state.list.map((item,index)=>{
             return (
-              <ListItem key={index} content={item} index={index} deleteItem={this.handlerDeleteItem} />
+              <ListItem key={item} content={item} index={index} deleteItem={this.handlerDeleteItem} />
             )
           })
   }
 
   handlerInputChange(e){
-    const inputValue = e.target.value;
+    const inputValue = this.input.value;
     this.setState(()=>({
       inputValue
     }))
