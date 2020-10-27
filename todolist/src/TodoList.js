@@ -12,7 +12,20 @@ class TodoList extends Component {
     this.handlerClickBtn = this.handlerClickBtn.bind(this);
     this.handlerDeleteItem = this.handlerDeleteItem.bind(this);
   }
+
+  componentWillMount(){
+    console.log('componentWillMount');
+  }
+
+  componentDidMount(){
+    console.log("componentWillDidMount");
+  }
+  shouldComponentUpdate(){
+    console.log("shouldComponentUpdate");
+    return true;
+  }
   render(){
+    console.log('render')
       return (
         <Fragment>
           <input
